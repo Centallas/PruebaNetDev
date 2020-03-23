@@ -1,0 +1,11 @@
+P:\TestJob\Page\API\DataConexion\bin\Debug\DataConexion.dll.config
+P:\TestJob\Page\API\DataConexion\bin\Debug\DataConexion.dll
+P:\TestJob\Page\API\DataConexion\bin\Debug\DataConexion.pdb
+P:\TestJob\Page\API\DataConexion\bin\Debug\EntityFramework.dll
+P:\TestJob\Page\API\DataConexion\bin\Debug\EntityFramework.SqlServer.dll
+P:\TestJob\Page\API\DataConexion\bin\Debug\EntityFramework.xml
+P:\TestJob\Page\API\DataConexion\bin\Debug\EntityFramework.SqlServer.xml
+P:\TestJob\Page\API\DataConexion\obj\Debug\DataConexion.csprojAssemblyReference.cache
+P:\TestJob\Page\API\DataConexion\obj\Debug\DataConexion.csproj.CopyComplete
+P:\TestJob\Page\API\DataConexion\obj\Debug\DataConexion.dll
+P:\TestJob\Page\API\DataConexion\obj\Debug\DataConexion.pdb

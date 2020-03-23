@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ConsumeSellersApi.Models.sellers>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>VENDEDOR</h2>
+
+<p>
+    @Html.ActionLink("Nuevo vendedor", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            CODIGO
+        </th>
+        <th>
+            NOMBRE
+        </th>
+        <th>
+            APELLIDO
+        </th>
+        <th>
+            IDENTIFICACION
+        </th>
+        <th>
+            CIUDAD
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CODIGO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOMBRE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.APELLIDO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NUMERO_IDENTIFICACION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CIUDAD)
+            </td>
+            <td>
+                @Html.ActionLink("Edita", "Edit", new {  id=item.CODIGO }) |
+                @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+                @Html.ActionLink("Elimina", "Delete", new { id=item.CODIGO })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,72 @@
+﻿@model ConsumeSellersApi.Models.sellers
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar vendedor</h2>
+
+<h3>¿Quieres eliminar el vendedor?</h3>
+<div>
+    <h4>sellers</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <b>Código:</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGO)
+        </dd>
+
+        <dt>
+          <b>Nombre:</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE)
+        </dd>
+
+        <dt>
+          <b>Apellido:</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.APELLIDO)
+        </dd>
+
+        <dt>
+            <b>Identificación:</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NUMERO_IDENTIFICACION)
+        </dd>
+
+        @*<dt>
+           <b>Ciudad</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGO_CIUDAD)
+        </dd>*@
+
+        @*<dt>
+           <b>Ciudad:</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CIUDAD)
+        </dd>*@
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

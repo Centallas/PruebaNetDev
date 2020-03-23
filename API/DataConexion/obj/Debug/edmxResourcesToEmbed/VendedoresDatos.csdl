@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VendedoresModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="VendedoresEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CIUDADs" EntityType="VendedoresModel.CIUDAD" />
+    <EntitySet Name="VENDEDORs" EntityType="VendedoresModel.VENDEDOR" />
+    <AssociationSet Name="FK_VENDEDOR_CIUDAD1" Association="VendedoresModel.FK_VENDEDOR_CIUDAD1">
+      <End Role="CIUDAD" EntitySet="CIUDADs" />
+      <End Role="VENDEDOR" EntitySet="VENDEDORs" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CIUDAD">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODIGO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="VENDEDORs" Relationship="VendedoresModel.FK_VENDEDOR_CIUDAD1" FromRole="CIUDAD" ToRole="VENDEDOR" />
+  </EntityType>
+  <EntityType Name="VENDEDOR">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODIGO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="APELLIDO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NUMERO_IDENTIFICACION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CODIGO_CIUDAD" Type="Int64" />
+    <NavigationProperty Name="CIUDAD" Relationship="VendedoresModel.FK_VENDEDOR_CIUDAD1" FromRole="VENDEDOR" ToRole="CIUDAD" />
+  </EntityType>
+  <Association Name="FK_VENDEDOR_CIUDAD1">
+    <End Type="VendedoresModel.CIUDAD" Role="CIUDAD" Multiplicity="0..1" />
+    <End Type="VendedoresModel.VENDEDOR" Role="VENDEDOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CIUDAD">
+        <PropertyRef Name="CODIGO" />
+      </Principal>
+      <Dependent Role="VENDEDOR">
+        <PropertyRef Name="CODIGO_CIUDAD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
